@@ -3,6 +3,7 @@ const express = require('express');
 const nmap = require('node-nmap');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
+const { log } = require('util');
 const connection = mysql.createConnection({
     host: "localhost",
     user: "admin",
@@ -47,6 +48,12 @@ app.get('/nmap', (req, res) => {
         const osandports = new nmap.NmapScan(scan_target, param);
         osandports.on('complete', function (data) {
             res.json(data);
+
+            let result = JSON.stringify(data);
+
+            const sql = `INSERT INTO scan_history (datetime, param, response) VALUES (CURRENT_TIMESTAMP(), '${param}', '${result}')`;
+
+            connection.query(sql);
         });
 
         osandports.on('error', function (error) {
