@@ -13,14 +13,16 @@ function Header() {
     return (
         <div className='header'>
             <div className='container'>
-                <h1 className='logo'>Nmap</h1>
-                <nav>
-                    <ul className='menu-items'>
-                        <li className='menu-item'>
-                            <a href='/scan_history' className='link-item'>История сканирования</a>
-                        </li>
-                    </ul>
-                </nav>
+                <div className='header-wrap'>
+                    <a href="#" className='logo'>Nmap</a>
+                    <nav className='nav'>
+                        <ul className='menu-items'>
+                            <li className='menu-item'>
+                                <a href='/scan_history' className='link-item'>История сканирования</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
     );

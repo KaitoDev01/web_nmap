@@ -10,6 +10,29 @@ body {
   margin: auto;
 }
 
+.header-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  margin-left: 20px;
+  padding-left: 25px;
+  border-left: 2px solid #fff;
+}
+
+.menu-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link-item {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
 .header {
   background: rgb(73, 159, 220);
   margin-bottom: 50px;
@@ -23,6 +46,7 @@ body {
   line-height: 44px;
   margin: 0;
   padding: 10px 0;
+  text-decoration: none;
 }
 
 .main-content {
